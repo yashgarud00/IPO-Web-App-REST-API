@@ -1,0 +1,212 @@
+{
+  "info": {
+    "name": "IPO API Collection",
+    "_postman_id": "12345678-abcd-efgh-ijkl-1234567890ab",
+    "description": "Postman collection for IPO API endpoints including authentication and IPO CRUD operations.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Obtain JWT Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"your_username\",\n  \"password\": \"your_password\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/token/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "token"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Refresh JWT Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"refresh\": \"your_refresh_token\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/token/refresh/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "token",
+                "refresh"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "IPO Endpoints",
+      "item": [
+        {
+          "name": "List IPOs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/ipo/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "ipo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create IPO",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company_name\": \"Example Company\",\n  \"status\": \"upcoming\",\n  \"open_date\": \"2024-07-01\",\n  \"close_date\": \"2024-07-10\",\n  \"listing_date\": \"2024-07-15\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ipo/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "ipo"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Retrieve IPO",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/ipo/:id/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "ipo",
+                ":id"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update IPO",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company_name\": \"Updated Company\",\n  \"status\": \"open\",\n  \"open_date\": \"2024-07-01\",\n  \"close_date\": \"2024-07-12\",\n  \"listing_date\": \"2024-07-16\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ipo/:id/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "ipo",
+                ":id"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete IPO",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/ipo/:id/",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "ipo",
+                ":id"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}

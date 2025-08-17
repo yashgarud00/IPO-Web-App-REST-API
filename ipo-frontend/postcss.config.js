@@ -1,0 +1,1 @@
+/* This file is replaced by postcss.config.cjs for CommonJS support */

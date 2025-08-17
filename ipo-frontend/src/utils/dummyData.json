@@ -1,0 +1,89 @@
+{
+  "companies": [
+    {
+      "company_id": 1,
+      "company_name": "Tech Innovators Inc.",
+      "company_logo": "https://example.com/logos/tech_innovators.png"
+    },
+    {
+      "company_id": 2,
+      "company_name": "Green Energy Corp.",
+      "company_logo": "https://example.com/logos/green_energy.png"
+    },
+    {
+      "company_id": 3,
+      "company_name": "HealthPlus Ltd.",
+      "company_logo": "https://example.com/logos/healthplus.png"
+    }
+  ],
+  "ipos": [
+    {
+      "ipo_id": 1,
+      "company_id": 1,
+      "price_band": "100-120",
+      "open_date": "2024-07-01",
+      "close_date": "2024-07-10",
+      "issue_size": "10 million shares",
+      "issue_type": "Book Building",
+      "listing_date": "2024-07-15",
+      "status": "Upcoming",
+      "ipo_price": 110.00,
+      "listing_price": null,
+      "listing_gain": null,
+      "current_market_price": null,
+      "current_return": null
+    },
+    {
+      "ipo_id": 2,
+      "company_id": 2,
+      "price_band": "80-95",
+      "open_date": "2024-07-05",
+      "close_date": "2024-07-15",
+      "issue_size": "15 million shares",
+      "issue_type": "Fixed Price",
+      "listing_date": "2024-07-20",
+      "status": "Upcoming",
+      "ipo_price": 87.50,
+      "listing_price": null,
+      "listing_gain": null,
+      "current_market_price": null,
+      "current_return": null
+    },
+    {
+      "ipo_id": 3,
+      "company_id": 3,
+      "price_band": "150-170",
+      "open_date": "2024-07-12",
+      "close_date": "2024-07-20",
+      "issue_size": "8 million shares",
+      "issue_type": "Book Building",
+      "listing_date": "2024-07-25",
+      "status": "Upcoming",
+      "ipo_price": 160.00,
+      "listing_price": null,
+      "listing_gain": null,
+      "current_market_price": null,
+      "current_return": null
+    }
+  ],
+  "documents": [
+    {
+      "document_id": 1,
+      "ipo_id": 1,
+      "rhp_pdf": "https://example.com/docs/tech_innovators_rhp.pdf",
+      "drhp_pdf": "https://example.com/docs/tech_innovators_drhp.pdf"
+    },
+    {
+      "document_id": 2,
+      "ipo_id": 2,
+      "rhp_pdf": "https://example.com/docs/green_energy_rhp.pdf",
+      "drhp_pdf": "https://example.com/docs/green_energy_drhp.pdf"
+    },
+    {
+      "document_id": 3,
+      "ipo_id": 3,
+      "rhp_pdf": "https://example.com/docs/healthplus_rhp.pdf",
+      "drhp_pdf": "https://example.com/docs/healthplus_drhp.pdf"
+    }
+  ]
+}

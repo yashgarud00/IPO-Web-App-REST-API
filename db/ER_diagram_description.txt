@@ -1,0 +1,44 @@
+ER Diagram Description:
+
+Entities and Attributes:
+
+1. Companies
+- company_id: INT (Primary Key, Auto-Increment)
+- company_name: VARCHAR(255) (Not Null)
+- company_logo: VARCHAR(255) (URL or file path)
+
+2. IPOs
+- ipo_id: INT (Primary Key, Auto-Increment)
+- company_id: INT (Foreign Key referencing Companies.company_id)
+- price_band: VARCHAR(50)
+- open_date: DATE
+- close_date: DATE
+- issue_size: VARCHAR(100)
+- issue_type: VARCHAR(50)
+- listing_date: DATE
+- status: ENUM('Upcoming', 'Open', 'Closed', 'Listed')
+- ipo_price: DECIMAL(10,2)
+- listing_price: DECIMAL(10,2)
+- listing_gain: DECIMAL(5,2)
+- current_market_price: DECIMAL(10,2)
+- current_return: DECIMAL(5,2)
+
+3. Documents
+- document_id: INT (Primary Key, Auto-Increment)
+- ipo_id: INT (Foreign Key referencing IPOs.ipo_id)
+- rhp_pdf: VARCHAR(255) (URL or file path)
+- drhp_pdf: VARCHAR(255) (URL or file path)
+
+Relationships:
+
+- Companies to IPOs
+  Type: One-to-Many
+  Description: One company can have multiple IPOs.
+  Foreign Key: company_id in IPOs
+  On Delete: CASCADE
+
+- IPOs to Documents
+  Type: One-to-Many
+  Description: One IPO can have multiple documents.
+  Foreign Key: ipo_id in Documents
+  On Delete: CASCADE
